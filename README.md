@@ -1,30 +1,31 @@
 # 🔄 Unit Converter
 
-Python project that allows you to convert different types of units.
-Initially focused on temperature, but with plans to expand to:
+A Python project that allows you to convert between various types of units.  
+Currently focused on temperature, with plans to expand to:
 
-- 💰 Coin
+- 💰 Currency
 - 📏 Length measurements
 - 🚗 Speed
-- ⏱️ Date and time 
-- 🌍 Time zone
-- 📦 Bulk
+- ⏱️ Time and duration
+- 🌍 Time zones
+- 📦 Volume
 - 🧭 Angles
-- 🧮 Number base
-- 📶 Digital units
+- 🧮 Number bases
+- 📶 Digital storage units
 - 🧊 Pressure
-- 🔋 Energy
+- 🔋 Energy and power
 - 🧬 Frequency
 - 📐 Area
-- 🧳 Custom Converter
+- 🧳 Custom conversions
 
-## ✅ Current features
+## ✅ Current Features
 
-- Conversion between Celsius, Fahrenheit and Kelvin
-- Interactive menu
-- Error handling for invalid inputs
+- Conversion between Celsius, Fahrenheit, and Kelvin  
+- Interactive menu  
+- Error handling for invalid input  
 
-## 📌 How to run
+## 📌 How to Run
 
-1. Make sure you have Python installed (3.6+)
+1. Make sure you have Python installed (version 3.6 or higher)  
 2. Run the `converter.py` file in the terminal:
+
