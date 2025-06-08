@@ -1,6 +1,6 @@
 def run_temperature_converter():
-    print(
-        "TEMPERATURE CONVERTER\n1 - Celsius to Fahrenheit\n2 - Fahrenheit to Celsius\n3 - Celsius to Kelvin\n4 - Kelvin to Celsius\n5 - Fahrenheit to Kelvin\n6 - Kelvin to Fahrenheit")
+    print()
+    print("TEMPERATURE CONVERTER\n1 - Celsius to Fahrenheit\n2 - Fahrenheit to Celsius\n3 - Celsius to Kelvin\n4 - Kelvin to Celsius\n5 - Fahrenheit to Kelvin\n6 - Kelvin to Fahrenheit")
     try:
         temp = int(input("Choose an option - "))
     except ValueError:
