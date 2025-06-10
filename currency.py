@@ -23,7 +23,8 @@ def currency_converter(f, to, value):
 
 def run_currency_converter():
     currencies = ["USD", "EUR", "GBP", "JPY", "BRL", "CNY"]
-    print()
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    print("CURRENCY CONVERTER")
     print("Convert from:\n1 - US Dollar\n2 - Euro\n3 - Pound sterling\n4 - Japanese Yen\n5 - Brazilian Real\n6 - Chinese Yuan")
     try:
         x1 = int(input("Choose an option - "))
