@@ -6,6 +6,7 @@ A Python project that allows you to convert between various types of units.
 
 - Temperature conversion (Celsius, Fahrenheit, Kelvin)
 - Currency conversion (real-time exchange rates via exchangerate.host)
+- Length conversion (Metric units - km, hm, dam, m, dm, cm, mm)
 
 ## 🛠️ Installation
 
@@ -19,13 +20,13 @@ Make sure you have Python 3.6 or higher.
 
 ## 🚀 Planned Expansions
 
-| Measurement | Digital / Math       | Time / Misc          |
+| Measurement | Digital / Math       | Time / Misc           |
 |-------------|----------------------|-----------------------|
-| 📏 Length   | 🧮 Number bases       | ⏱️ Time & duration    |
-| 📦 Volume   | 📶 Digital storage    | 🌍 Time zones         |
-| 📐 Area     | 🔋 Energy & power     | 🧳 Custom conversions |
-| 🧊 Pressure | 🧬 Frequency          | 💰 More currencies    |
-| ⚖️ Weight  |                      |                       |
+| 📦 Volume   | 🧮 Number bases      | ⏱️ Time & duration    |
+| 📐 Area     | 📶 Digital storage   | 🌍 Time zones         |
+| 🧊 Pressure | 🔋 Energy & power    | 🧳 Custom conversions |
+| ⚖️ Weight   | 🧬 Frequency         | 💰 More currencies    |
+
 
 ## 📁 Project Structure
 
