@@ -1,6 +1,6 @@
 def run_number_bases_converter():
     bases = ["decimal","hexadecimal","octal","binary"]
-    print("NUMBER_BASES")
+    print("-=-=-=-=-=- NUMBER BASES CONVERTER -=-=-=-=-=-")
     print("Menu options:\n1 - Decimal | 2 - Hexadecimal | 3 - Octal | 4 - Binary")
     try:
         f = int(input("Converter from - "))

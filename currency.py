@@ -24,16 +24,14 @@ def currency_converter(f, to, value):
 def run_currency_converter():
     currencies = ["USD", "EUR", "GBP", "JPY", "BRL", "CNY"]
     print("-=-=-=-=-=- CURRENCY CONVERTER -=-=-=-=-=-")
-    print("Convert from:\n1 - US Dollar\n2 - Euro\n3 - Pound sterling\n4 - Japanese Yen\n5 - Brazilian Real\n6 - Chinese Yuan")
+    print("Menu options:\n1 - US Dollar\n2 - Euro\n3 - Pound sterling\n4 - Japanese Yen\n5 - Brazilian Real\n6 - Chinese Yuan")
     try:
-        x1 = int(input("Choose an option - "))
+        x1 = int(input("Converter from - "))
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 6.")
         exit()
-    print(
-        "Convert to:\n1 - US Dollar\n2 - Euro\n3 - Pound sterling\n4 - Japanese Yen\n5 - Brazilian Real\n6 - Chinese Yuan")
     try:
-        x2 = int(input("Choose an option - "))
+        x2 = int(input("To - "))
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 6.")
         exit()

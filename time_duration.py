@@ -30,17 +30,16 @@ def run_time_duration_converter():
             4: 1 / 60,       # Seconds to minute(s)
             5: 1             # Seconds to second(s)
         }
-        print("Convert from:\n1 - Year | 2 - Month | 3 - Day | 4 - Hour | 5 - Minute | 6 - Seconds")
+        print("Menu options:\n1 - Year | 2 - Month | 3 - Day | 4 - Hour | 5 - Minute | 6 - Seconds")
         try:
-            f = int(input("> "))
+            f = int(input("Converter from - "))
             if not (1 <= f <= 6):
                 raise ValueError("Invalid input. Please enter a number from 1 to 6.")
         except ValueError as e:
             print(f"Error: {e}")
             exit()
-        print("Convert to:\n1 - Year | 2 - Month | 3 - Day | 4 - Hour | 5 - Minute | 6 - Seconds")
         try:
-            t = int(input("> "))
+            t = int(input("To - "))
             if not (1 <= t <= 6):
                 raise ValueError("Invalid input. Please enter a number from 1 to 6.")
         except ValueError as e:
