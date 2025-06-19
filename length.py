@@ -1,6 +1,5 @@
 def run_length_converter():
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    print("LENGTH CONVERTER")
+    print("-=-=-=-=-=- LENGTH CONVERTER -=-=-=-=-=-")
     length = ["km", "hm", "dam", "m", "dm", "cm", "mm"]
     print("Converter from: 1 - km | 2 - hm | 3 - dam | 4 - m | 5 - dm | 6 - cm | 7 - mm")
     try:

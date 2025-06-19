@@ -1,6 +1,7 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 def run_time_duration_converter():
+    print("-=-=-=-=-=- TIME & DURATION -=-=-=-=-=-")
     print("Function menu\n1 - Convert time units | 2 - How many days | 3 - Time zone")
     try:
         func = int(input("> "))
