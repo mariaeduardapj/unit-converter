@@ -10,6 +10,7 @@ A Python project that allows you to convert between various types of units.
 - Time and duration conversion (Time units, day county and time zones)
 - Volume (Volume units - km³, hm³, dam³, m³, dm³, cm³, mm³, kL, hL, daL, L, dL, cL, mL)
 - Digital storage (bytes, kb, mb, gb, tb, pb, eb, zb)
+- Weight (ton, kg, hg, dag, g, dg, cg, mg)
 
 ## 🛠️ Installation
 
@@ -27,7 +28,6 @@ Make sure you have Python 3.6 or higher.
 |---------------|-------------------|-----------------------|
 | 📐 Area       | 🔋 Energy & power | 🧳 Custom conversions |
 | 🧊 Pressure   | 🧬 Frequency      |
-| ⚖️ Weight     |
 
 
 ## 📁 Project Structure
