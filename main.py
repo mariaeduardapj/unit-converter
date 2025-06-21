@@ -5,11 +5,12 @@ from time_duration import run_time_duration_converter
 from volume import run_volume_converter
 from number_bases import run_number_bases_converter
 from digital_storage import run_digital_storage_converter
+from weight import run_weight_converter
 
 def main():
     while True:
         print()
-        print("UNIT CONVERTER\n1 - Temperature Converter\n2 - Currency Converter\n3 - Length Converter\n4 - Time and Duration Converter\n5 - Volume Converter\n6 - Number Bases Converter\n7 - Digital Storage Converter\n8 - Exit")
+        print("UNIT CONVERTER\n1 - Temperature Converter\n2 - Currency Converter\n3 - Length Converter\n4 - Time and Duration Converter\n5 - Volume Converter\n6 - Number Bases Converter\n7 - Digital Storage Converter\n8 - Weight Converter\n9 - Exit")
         try:
             option = int(input("Choose an option - "))
         except ValueError:
@@ -31,6 +32,8 @@ def main():
         elif option == 7:
             run_digital_storage_converter()
         elif option == 8:
+            run_weight_converter()
+        elif option == 9:
             break
         else:
             print("Invalid option.")
