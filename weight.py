@@ -26,12 +26,14 @@ def run_weight_converter():
         f = int(input("Convert from - "))
         if 1 > f > 8:
             print("Invalid option. Please, choose a number between 1 and 8.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 8.")
     try:
         t = int(input("To - "))
         if 1 > t > 8:
             print("Invalid option. Please, choose a number between 1 and 8.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 8.")
     try:
