@@ -13,6 +13,7 @@ A Python project that allows you to convert between various types of units.
 - Weight (Units: ton, kg, hg, dag, g, dg, cg, mg)
 - Area (Units: km², hm², dam², m², dm², cm², mm²)
 - Energy (Units: W, kW, J, kJ, cal, kcal, eV, BTU)
+- Pressure (Units: Pa, kPa, MPa, bar, atm, mmHg, psi)
 
 ## 🛠️ Installation
 
@@ -26,9 +27,9 @@ Make sure you have Python 3.6 or higher.
 
 ## 🚀 Planned Expansions
 
-| Measurement   | Digital / Math  | Time / Misc           |
-|---------------|-----------------|-----------------------|
-| 🧊 Pressure   | 🧬 Frequency    | 🧳 Custom conversions |
+| Measurement | Digital / Math  | Time / Misc           |
+|-------------|-----------------|-----------------------|
+|             | 🧬 Frequency    | 🧳 Custom conversions |
 
 
 ## 📁 Project Structure
@@ -45,6 +46,7 @@ unit_converter/
 ├── weight.py          # Weight conversion logic
 ├── area.py            # Area conversion logic
 ├── energy.py          # Energy conversion logic
+├── pressure.py        # Pressure conversion logic
 ├── requirements.txt   # Project dependencies
 ├── .gitignore         # Files ignored by Git
 └── README.md          # Project documentation
