@@ -38,7 +38,6 @@ def run_volume_converter():
         f = int(input("Convert from - "))
         if 1 > f > 14:
             print("Invalid option. Please choose a number between 1 and 14.")
-            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 14.")
         exit()
@@ -46,15 +45,14 @@ def run_volume_converter():
         t = int(input("To - "))
         if 1 > t > 14:
             print("Invalid option. Please choose a number between 1 and 14.")
-            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 14.")
         exit()
     try:
-        value = float(input(f"Value in {volumes[f-1]} - "))
+        value = float(input(f"Value in {volumes[f - 1]} - "))
     except ValueError:
         print("Invalid value. Please enter a number.")
         exit()
-    value_in_ml = value * factors_to_ml[f-1]
-    converted_value = value_in_ml * factors_from_ml[t-1]
-    print(f"{value}{volumes[f-1]} -> {converted_value}{volumes[t-1]}")
+    value_in_ml = value * factors_to_ml[f - 1]
+    converted_value = value_in_ml * factors_from_ml[t - 1]
+    print(f"{value} {volumes[f - 1]} -> {converted_value} {volumes[t - 1]}")
