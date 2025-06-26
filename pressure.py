@@ -24,6 +24,7 @@ def run_pressure_converter():
         f = int(input("Convert from - "))
         if not (1 <= f <= 7):
             print("Invalid option. Please choose a number between 1 and 7.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 7.")
         exit()
@@ -31,6 +32,7 @@ def run_pressure_converter():
         t = int(input("To - "))
         if not (1 <= t <= 7):
             print("Invalid option. Please choose a number between 1 and 7.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 7.")
         exit()

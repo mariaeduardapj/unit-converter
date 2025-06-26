@@ -44,4 +44,4 @@ def run_energy_converter():
         exit()
     value_in_w = value * factors_to_w[f - 1]
     converted_value = value_in_w * factors_from_w[t - 1]
-    print(f"{value}{energies[f - 1]} -> {converted_value}{energies[t - 1]}")
+    print(f"{value} {energies[f - 1]} -> {converted_value} {energies[t - 1]}")

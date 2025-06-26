@@ -5,6 +5,7 @@ def run_temperature_converter():
         temp = int(input("Choose an option - "))
         if not (1 <= temp <= 6):
             print("Invalid option. Please, choose a number between 1 and 6.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 6.")
         exit()
