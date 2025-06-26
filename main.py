@@ -10,15 +10,19 @@ from area import run_area_converter
 from energy import run_energy_converter
 from pressure import run_pressure_converter
 from frequency import run_frequency_converter
+from custom import run_custom_converter
 
 def main():
     while True:
         print()
-        print("UNIT CONVERTER\n01 - Temperature Converter       | 02 - Currency Converter | 03 - Length Converter\n04 - Time and Duration Converter | 05 - Volume Converter   | 06 - Number Bases Converter\n07 - Digital Storage Converter   | 08 - Weight Converter   | 09 - Area Converter\n10 - Energy Converter            | 11 - Pressure Converter | 12 - Frequency Converter\n13 - Exit")
+        print("UNIT CONVERTER\n01 - Temperature Converter       | 06 - Number Bases Converter    | 11 - Pressure Converter\n02 - Currency Converter          | 07 - Digital Storage Converter | 12 - Frequency Converter\n03 - Length Converter            | 08 - Weight Converter          | 13 - Custom Converter\n04 - Time and Duration Converter | 09 - Area Converter            | 12 - Frequency Converter\n05 - Volume Converter            | 10 - Energy Converter")
         try:
             option = int(input("Choose an option - "))
+            if not (1 <= option <= 14):
+                print("Invalid option. Please, choose a number between 1 and 14.")
+                return
         except ValueError:
-            print("Invalid option. Please, enter a number from 1 to 13.")
+            print("Invalid option. Please, enter a number from 1 to 14.")
             return
         print()
         if option == 1:
@@ -46,6 +50,8 @@ def main():
         elif option == 12:
             run_frequency_converter()
         elif option == 13:
+            run_custom_converter()
+        elif option == 14:
             break
         else:
             print("Invalid option.")
