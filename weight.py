@@ -24,14 +24,14 @@ def run_weight_converter():
     print("MENU OPTIONS:\n1 - Metric ton (t) | 2 - Kilogram (kg)  | 3 - Hectogram (hg) | 4 - Dekagram (dag) \n5 - Gram (g)       | 6 - Centigram (cg) | 7 - Decigram (dg)  | 8 - Miligram (mg)")
     try:
         f = int(input("Convert from - "))
-        if 1 > f > 8:
+        if not (1 <= f <= 8):
             print("Invalid option. Please, choose a number between 1 and 8.")
             return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 8.")
     try:
         t = int(input("To - "))
-        if 1 > t > 8:
+        if not (1 <= t <= 8):
             print("Invalid option. Please, choose a number between 1 and 8.")
             return
     except ValueError:

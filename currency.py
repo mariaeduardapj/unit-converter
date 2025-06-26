@@ -27,11 +27,15 @@ def run_currency_converter():
     print("Menu options:\n1 - US Dollar\n2 - Euro\n3 - Pound sterling\n4 - Japanese Yen\n5 - Brazilian Real\n6 - Chinese Yuan")
     try:
         x1 = int(input("Converter from - "))
+        if not (1 <= x1 <= 6):
+            print("Invalid option. Please, choose a number between 1 and 6")
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 6.")
         exit()
     try:
         x2 = int(input("To - "))
+        if not (1 <= x2 <= 6):
+            print("Invalid option. Please, choose a number between 1 and 6")
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 6.")
         exit()

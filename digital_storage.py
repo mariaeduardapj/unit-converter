@@ -24,7 +24,7 @@ def run_digital_storage_converter():
     print("Menu options:\n1 - Byte          | 2 - Kilobyte (KB) | 3 - Megabyte (MB) | 4 - Gigabyte (GB)\n5 - Terabyte (TB) | 6 - Petabyte (PB) | 7 - Exabyte (EB)  | 8 - Zettabyte (ZB)")
     try:
         f = int(input("Converter from - "))
-        if 1 > f > 8:
+        if not (1 <= f <= 8):
             print("Invalid option. Please choose a number from 1 to 8.")
             return
     except ValueError:
@@ -32,7 +32,7 @@ def run_digital_storage_converter():
         exit()
     try:
         t = int(input("To - "))
-        if 1 > t > 8:
+        if not (1 <= t <= 8):
             print("Invalid option. Please choose a number from 1 to 8.")
             return
     except ValueError:

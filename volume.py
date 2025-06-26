@@ -36,15 +36,17 @@ def run_volume_converter():
     print("MENU OPTIONS:\n1 - km³ | 2 - hm³ | 3 - dam³ | 4 - m³ | 5 - dm³ | 6 - cm³ | 7 - mm³\n8 - kL  | 9 - hL  | 10 - daL | 11 - L | 12 - dL | 13 - cL | 14 - mL")
     try:
         f = int(input("Convert from - "))
-        if 1 > f > 14:
+        if not (1 <= f <= 14):
             print("Invalid option. Please choose a number between 1 and 14.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 14.")
         exit()
     try:
         t = int(input("To - "))
-        if 1 > t > 14:
+        if not (1 <= t <= 14):
             print("Invalid option. Please choose a number between 1 and 14.")
+            return
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 14.")
         exit()

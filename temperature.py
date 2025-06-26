@@ -3,6 +3,8 @@ def run_temperature_converter():
     print("1 - Celsius to Fahrenheit\n2 - Fahrenheit to Celsius\n3 - Celsius to Kelvin\n4 - Kelvin to Celsius\n5 - Fahrenheit to Kelvin\n6 - Kelvin to Fahrenheit")
     try:
         temp = int(input("Choose an option - "))
+        if not (1 <= temp <= 6):
+            print("Invalid option. Please, choose a number between 1 and 6.")
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 6.")
         exit()

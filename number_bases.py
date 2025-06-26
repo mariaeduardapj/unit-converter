@@ -4,14 +4,14 @@ def run_number_bases_converter():
     print("Menu options:\n1 - Decimal | 2 - Hexadecimal | 3 - Octal | 4 - Binary")
     try:
         f = int(input("Converter from - "))
-        if 1 > f > 4:
+        if not (1 <= f <= 4):
             print("Invalid option. Please choose an option between 1 and 4.")
     except ValueError:
         print("Invalid option. Please enter a number from 1 to 4.")
         exit()
     try:
         t = int(input("To - "))
-        if 1 > t > 4:
+        if not (1 <= t <= 4):
             print("Invalid option. Please choose an option between 1 and 4.")
     except ValueError:
         print("Invalid option. Please enter a number from 1 to 4.")

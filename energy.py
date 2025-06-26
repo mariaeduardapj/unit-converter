@@ -23,7 +23,7 @@ def run_energy_converter():
     print("MENU OPTIONS:\n1 - Watt (W)          | 2 - Kilowatt (kW)          | 3 - Joule/s (J/s)          | 4 - Kilojoule/s (kJ/s)\n5 - Calorie/s (cal/s) | 6 - Kilocalorie/s (kcal/s) | 7 - Electron-volt/s (eV/s) | 8 - British Thermal Unit/s (BTU/s)")
     try:
         f = int(input("Convert from - "))
-        if 1 > f > 8:
+        if not (1 <= f <= 8):
             print("Invalid option. Please choose a number between 1 and 8.")
             return
     except ValueError:
@@ -31,7 +31,7 @@ def run_energy_converter():
         exit()
     try:
         t = int(input("To - "))
-        if 1 > t > 8:
+        if not (1 <= t <= 8):
             print("Invalid option. Please choose a number between 1 and 8.")
             return
     except ValueError:

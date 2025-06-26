@@ -22,14 +22,14 @@ def run_pressure_converter():
     print("MENU OPTIONS:\n1 - Pascal (Pa)      | 2 - Kilopascal (kPa)    | 3 - Megapascal (MPa)     | 4 - Bar (bar)\n5 - Atmosphere (atm) | 6 - Millimeter of Mercury (mmHg) | 7 - Pound per Square Inch (psi)")
     try:
         f = int(input("Convert from - "))
-        if 1 > f > 7:
+        if not (1 <= f <= 7):
             print("Invalid option. Please choose a number between 1 and 7.")
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 7.")
         exit()
     try:
         t = int(input("To - "))
-        if 1 > t > 7:
+        if not (1 <= t <= 7):
             print("Invalid option. Please choose a number between 1 and 7.")
     except ValueError:
         print("Invalid option. Please, enter a number from 1 to 7.")

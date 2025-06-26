@@ -22,7 +22,7 @@ def run_area_converter():
     print("MENU OPTIONS:\n1 - km² | 2 - hm² | 3 - dam² | 4 - m² | 5 - dm² | 6 - cm² | 7 - mm²")
     try:
         f = int(input("Convert from - "))
-        if 1 > f > 8:
+        if not (1 <= f <= 8):
             print("Invalid option. Please choose a number between 1 and 8.")
             return
     except ValueError:
@@ -30,7 +30,7 @@ def run_area_converter():
         exit()
     try:
         t = int(input("To - "))
-        if 1 > t > 8:
+        if not (1 <= t <= 8):
             print("Invalid option. Please choose a number between 1 and 8.")
             return
     except ValueError:
