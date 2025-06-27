@@ -39,6 +39,7 @@ unit_converter/
 │ └── volume.py
 │ └── weight.py
 │ └── pressure.py
+│ └── frequency.py
 ├── templates/
 │ ├── index.html
 │ ├── area.html
@@ -46,6 +47,7 @@ unit_converter/
 │ └── volume.html
 │ └── weight.html
 │ └── pressure.html
+│ └── frequency.html
 ├── .gitignore           
 └── README.md             
 
