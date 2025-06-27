@@ -9,7 +9,7 @@ from converter_logic.weight import run_weight_converter
 from area import run_area_converter
 from energy import run_energy_converter
 from converter_logic.pressure import run_pressure_converter
-from frequency import run_frequency_converter
+from converter_logic.frequency import run_frequency_converter
 from custom import run_custom_converter
 
 def main():
