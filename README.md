@@ -44,6 +44,7 @@ unit_converter/
 │ └── energy.py
 │ └── digital_storage.py
 │ └── number_bases.py
+│ └── time_duration.py
 ├── templates/
 │ ├── index.html
 │ ├── area.html
@@ -56,6 +57,7 @@ unit_converter/
 │ └── energy.html
 │ └── digital_storage.html
 │ └── number_bases.html
+│ └── time_duration.html
 ├── .gitignore           
 └── README.md             
 
