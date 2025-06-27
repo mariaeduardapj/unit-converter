@@ -8,6 +8,7 @@ from converter_logic.frequency import convert_frequency, frequencies
 from converter_logic.temperature import convert_temperature, temperatures
 from converter_logic.energy import convert_energy, energies
 from converter_logic.digital_storage import convert_digital_storage, ds_units
+from converter_logic.number_bases import convert_number_base, bases
 
 app = Flask(__name__)
 
@@ -149,6 +150,20 @@ def digital_storage_converter():
         except Exception as e:
             result = f"Erro: {e}"
     return render_template('digital_storage.html', result=result, ds_units=ds_units)
+
+@app.route('/number_bases', methods=['GET', 'POST'])
+def number_bases_converter():
+    result = None
+    if request.method == 'POST':
+        try:
+            value = int(request.form['value'])
+            from_unit = request.form['from_unit']
+            to_unit = request.form['to_unit']
+            converted = convert_number_base(value, from_unit, to_unit)
+            result = f"{value} {from_unit} = {converted} {to_unit}"
+        except Exception as e:
+            result = f"Erro: {e}"
+    return render_template('number_bases.html', result=result, bases=bases)
 
 
 if __name__ == '__main__':
