@@ -42,6 +42,7 @@ unit_converter/
 │ └── frequency.py
 │ └── temperature.py
 │ └── energy.py
+│ └── digital_storage.py
 ├── templates/
 │ ├── index.html
 │ ├── area.html
@@ -52,6 +53,7 @@ unit_converter/
 │ └── frequency.html
 │ └── temperature.html
 │ └── energy.html
+│ └── digital_storage.html
 ├── .gitignore           
 └── README.md             
 
