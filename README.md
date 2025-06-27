@@ -19,32 +19,27 @@ A Python project that allows you to convert between various types of units.
 
 ## 🛠️ Installation
 
-Make sure you have Python 3.6 or higher.
+- Python 3.10 or higher
+- Flask
 
-1. Clone this repository  
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
 
 ## 📁 Project Structure
 
 ```bash
 unit_converter/
-├── main.py               # Main menu and logic dispatcher
-├── temperature.py        # Temperature conversion logic
-├── currency.py           # Currency conversion logic
-├── length.py             # Length conversion logic
-├── time_duration.py      # Time and duration conversion logic
-├── volume.py             # Volume conversion logic
-├── digital_storage.py    # Digital storage conversion logic
-├── weight.py             # Weight conversion logic
-├── area.py               # Area conversion logic
-├── energy.py             # Energy conversion logic
-├── pressure.py           # Pressure conversion logic
-├── frequency.py          # Frequency conversion logic
-├── custom_conversions.py # Custon conversion logic
-├── requirements.txt      # Project dependencies
-├── .gitignore            # Files ignored by Git
-└── README.md             # Project documentation
+├── app.py
+├── requirements.txt
+├── converter_logic/
+│ ├── area.py
+│ └── length.py
+├── templates/
+│ ├── index.html
+│ ├── area.html
+│ └── length.html
+├── .gitignore           
+└── README.md             
 
