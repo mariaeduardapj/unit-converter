@@ -43,6 +43,7 @@ unit_converter/
 │ └── temperature.py
 │ └── energy.py
 │ └── digital_storage.py
+│ └── number_bases.py
 ├── templates/
 │ ├── index.html
 │ ├── area.html
@@ -54,6 +55,7 @@ unit_converter/
 │ └── temperature.html
 │ └── energy.html
 │ └── digital_storage.html
+│ └── number_bases.html
 ├── .gitignore           
 └── README.md             
 
