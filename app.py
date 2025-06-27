@@ -5,6 +5,7 @@ from converter_logic.volume import convert_volume, volumes
 from converter_logic.weight import convert_weight, weights
 from converter_logic.pressure import convert_pressure, pressures
 from converter_logic.frequency import convert_frequency, frequencies
+from converter_logic.temperature import convert_temperature, temperatures
 
 app = Flask(__name__)
 
@@ -66,7 +67,7 @@ def weight_converter():
             from_unit = request.form['from_unit']
             to_unit = request.form['to_unit']
             converted = convert_weight(value, from_unit, to_unit)
-            formatted = "{:.12f}".format(converted).rstrip('0').rstrip('.')
+            formatted = "{:.6f}".format(converted).rstrip('0').rstrip('.')
             result = f"{value} {from_unit} = {formatted} {to_unit}"
         except Exception as e:
             result = f"Erro: {e}"
@@ -101,6 +102,21 @@ def frequency_converter():
         except Exception as e:
             result = f"Erro: {e}"
     return render_template('frequency.html', result=result, frequencies=frequencies)
+
+@app.route('/temperature', methods=['GET', 'POST'])
+def temperature_converter():
+    result = None
+    if request.method == 'POST':
+        try:
+            value = float(request.form['value'])
+            from_unit = request.form['from_unit']
+            to_unit = request.form['to_unit']
+            converted = convert_temperature(value, from_unit, to_unit)
+            formatted = "{:.2f}".format(converted).rstrip('0').rstrip('.')
+            result = f"{value} {from_unit} = {formatted} {to_unit}"
+        except Exception as e:
+            result = f"Erro: {e}"
+    return render_template('temperature.html', result=result, temperatures=temperatures)
 
 if __name__ == '__main__':
     app.run(debug=True)
