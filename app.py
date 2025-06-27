@@ -7,6 +7,7 @@ from converter_logic.pressure import convert_pressure, pressures
 from converter_logic.frequency import convert_frequency, frequencies
 from converter_logic.temperature import convert_temperature, temperatures
 from converter_logic.energy import convert_energy, energies
+from converter_logic.digital_storage import convert_digital_storage, ds_units
 
 app = Flask(__name__)
 
@@ -133,6 +134,21 @@ def energy_converter():
         except Exception as e:
             result = f"Erro: {e}"
     return render_template('energy.html', result=result, energies=energies)
+
+@app.route('/digital_storage', methods=['GET', 'POST'])
+def digital_storage_converter():
+    result = None
+    if request.method == 'POST':
+        try:
+            value = float(request.form['value'])
+            from_unit = request.form['from_unit']
+            to_unit = request.form['to_unit']
+            converted = convert_digital_storage(value, from_unit, to_unit)
+            formatted = "{:.7f}".format(converted).rstrip('0').rstrip('.')
+            result = f"{value} {from_unit} = {formatted} {to_unit}"
+        except Exception as e:
+            result = f"Erro: {e}"
+    return render_template('digital_storage.html', result=result, ds_units=ds_units)
 
 
 if __name__ == '__main__':

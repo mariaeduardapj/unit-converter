@@ -4,7 +4,7 @@ from converter_logic.length import run_length_converter
 from time_duration import run_time_duration_converter
 from converter_logic.volume import run_volume_converter
 from number_bases import run_number_bases_converter
-from digital_storage import run_digital_storage_converter
+from converter_logic.digital_storage import run_digital_storage_converter
 from converter_logic.weight import run_weight_converter
 from area import run_area_converter
 from converter_logic.energy import run_energy_converter
