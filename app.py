@@ -3,6 +3,7 @@ from converter_logic.area import convert_area, areas
 from converter_logic.length import convert_length, length
 from converter_logic.volume import convert_volume, volumes
 from converter_logic.weight import convert_weight, weights
+from converter_logic.pressure import convert_pressure, pressures
 
 app = Flask(__name__)
 
@@ -70,6 +71,20 @@ def weight_converter():
             result = f"Erro: {e}"
     return render_template('weight.html', result=result, weights=weights)
 
+@app.route('/pressure', methods=['GET', 'POST'])
+def pressure_converter():
+    result = None
+    if request.method == 'POST':
+        try:
+            value = float(request.form['value'])
+            from_unit = request.form['from_unit']
+            to_unit = request.form['to_unit']
+            converted = convert_pressure(value, from_unit, to_unit)
+            formatted = "{:.6f}".format(converted).rstrip('0').rstrip('.')
+            result = f"{value} {from_unit} = {formatted} {to_unit}"
+        except Exception as e:
+            result = f"Erro: {e}"
+    return render_template('pressure.html', result=result, pressures=pressures)
 
 if __name__ == '__main__':
     app.run(debug=True)
