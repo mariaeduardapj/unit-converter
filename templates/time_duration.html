@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time and Duration Converter</title>
+</head>
+<body>
+    <h1>Time and Duration Converter</h1>
+    <h2>1. Time Units Converter</h2>
+<form method="POST">
+    <input type="hidden" name="form_type" value="convert_units">
+    <input name="value" placeholder="Value" required>
+    <select name="from_unit">
+        {% for unit in time_units %}
+            <option value="{{ unit }}">{{ unit }}</option>
+        {% endfor %}
+    </select>
+    →
+    <select name="to_unit">
+        {% for unit in time_units %}
+            <option value="{{ unit }}">{{ unit }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Convert</button>
+</form>
+
+<h2>2. Days Between Dates</h2>
+<form method="POST">
+    <input type="hidden" name="form_type" value="days_between">
+    <input name="date1" placeholder="Date 1 (YYYY-MM-DD)" required>
+    <input name="date2" placeholder="Date 2 (YYYY-MM-DD)" required>
+    <button type="submit">Calculate</button>
+</form>
+
+<h2>3. Time Zone</h2>
+<form method="POST">
+    <input type="hidden" name="form_type" value="timezone">
+    <select name="zone">
+        {% for name in zones %}
+            <option value="{{ name }}">{{ name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">See time</button>
+</form>
+
+{% if result %}
+    <p><strong>Result:</strong> {{ result }}</p>
+{% endif %}
+
+    <p><a href="/">Go back</a></p>
+</body>
+</html>

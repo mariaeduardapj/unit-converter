@@ -9,6 +9,9 @@ from converter_logic.temperature import convert_temperature, temperatures
 from converter_logic.energy import convert_energy, energies
 from converter_logic.digital_storage import convert_digital_storage, ds_units
 from converter_logic.number_bases import convert_number_base, bases
+from converter_logic.time_duration import (
+    time_units, convert_time_unit, calculate_days_between, get_currency_time_in_zone, timezones
+)
 
 app = Flask(__name__)
 
@@ -165,6 +168,30 @@ def number_bases_converter():
             result = f"Erro: {e}"
     return render_template('number_bases.html', result=result, bases=bases)
 
+@app.route('/time_duration', methods=['GET', 'POST'])
+def time_duration_converter():
+    result = None
+    if request.method == 'POST':
+        form_type = request.form.get('form_type')
+        try:
+            if form_type == 'convert_units':
+                value = float(request.form['value'])
+                from_unit = request.form['from_unit']
+                to_unit = request.form['to_unit']
+                converted = convert_time_unit(value, from_unit, to_unit)
+                result = f"{value} {from_unit} = {converted:,.0f} {to_unit}"
+            elif form_type == 'days_between':
+                date1 = request.form['date1']
+                date2 = request.form['date2']
+                days = calculate_days_between(date1,date2)
+                result = f"{days} day(s) between {date1} and {date2}"
+            elif form_type == 'timezone':
+                zone = request.form['zone']
+                current_time = get_currency_time_in_zone(zone)
+                result = f"Real time in {zone}: {current_time}"
+        except Exception as e:
+            result = f"Error: {e}"
+    return render_template('time_duration.html', result=result, time_units=time_units, zones=list(timezones.keys()))
 
 if __name__ == '__main__':
     app.run(debug=True)
