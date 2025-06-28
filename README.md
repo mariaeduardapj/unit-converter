@@ -46,6 +46,7 @@ unit_converter/
 │ └── number_bases.py
 │ └── time_duration.py
 │ └── currency.py
+│ └── custom.py
 ├── templates/
 │ ├── index.html
 │ ├── area.html
@@ -60,6 +61,7 @@ unit_converter/
 │ └── number_bases.html
 │ └── time_duration.html
 │ └── currency.html
+│ └── custom.html
 ├── .gitignore           
 └── README.md             
 
