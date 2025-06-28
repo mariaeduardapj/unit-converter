@@ -9,9 +9,8 @@ from converter_logic.temperature import convert_temperature, temperatures
 from converter_logic.energy import convert_energy, energies
 from converter_logic.digital_storage import convert_digital_storage, ds_units
 from converter_logic.number_bases import convert_number_base, bases
-from converter_logic.time_duration import (
-    time_units, convert_time_unit, calculate_days_between, get_currency_time_in_zone, timezones
-)
+from converter_logic.time_duration import (time_units, convert_time_unit, calculate_days_between, get_currency_time_in_zone, timezones)
+from converter_logic.currency import currency_converter, currencies
 
 app = Flask(__name__)
 
@@ -192,6 +191,20 @@ def time_duration_converter():
         except Exception as e:
             result = f"Error: {e}"
     return render_template('time_duration.html', result=result, time_units=time_units, zones=list(timezones.keys()))
+
+@app.route('/currency', methods=['GET', 'POST'])
+def currency_converter_page():
+    result = None
+    if request.method == 'POST':
+        try:
+            from_currency = request.form['from_unit']
+            to_currency = request.form['to_unit']
+            value = float(request.form['value'])
+            converted = currency_converter(from_currency,to_currency,value)
+            result = f"{value} {from_currency} = {format(converted, '.2f')} {to_currency}"
+        except Exception as e:
+            result = f"Erro: {e}"
+    return render_template('currency.html', result=result, currencies=currencies)
 
 if __name__ == '__main__':
     app.run(debug=True)
