@@ -1,2 +1,4 @@
 flask
 tzdata
+requests
+python-dotenv
