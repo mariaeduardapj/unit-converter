@@ -208,24 +208,42 @@ def currency_converter_page():
     return render_template('currency.html', result=result, currencies=currencies)
 
 @app.route('/custom', methods=['GET', 'POST'])
-def custom_converter():
+def custom_converter_page():
     result = None
-    variables = ["Variable_A","Variable_B"]
-    operators = ["plus","minus","times","divided","raised"]
-
     if request.method == 'POST':
         try:
-            value = float(request.form['value'])
-            operator = request.form['operator']
-            number = float(request.form['number'])
+            a_name = request.form['a_name']
+            b_name = request.form['b_name']
             direction = request.form['direction']
+            operator = request.form['operator']
+            factor = float(request.form['factor'])
+            value = float(request.form['value'])
 
-            converted = convert_custom(value,operator,number)
-            result = f"{value} {variables[0 if direction == 'a_to_b' else 1]} {converted} {variables[1 if direction == 'a_to_b' else 0]}"
+            def custom_conversion(x, op, y):
+                if op == 'plus':
+                    return x + y
+                elif op == 'minus':
+                    return x - y
+                elif op == 'times':
+                    return x * y
+                elif op == 'divided':
+                    return x / y
+                elif op == 'raised':
+                    return x ** y
+                else:
+                    raise ValueError("Invalid operator")
+
+            if direction == 'A_to_B':
+                converted = custom_conversion(value, operator, factor)
+                result = f"Result: {a_name} - {value} | {b_name} - {converted}"
+            else:
+                converted = custom_conversion(value, operator, factor)
+                result = f"Result: {b_name} - {value} | {a_name} - {converted}"
+
         except Exception as e:
-            result = f"Error {e}"
+            result = f"Erro: {e}"
 
-    return render_template("custom.html", result=result, operators=operators)
+    return render_template('custom.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

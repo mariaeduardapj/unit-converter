@@ -8,30 +8,38 @@
 <body>
     <h1>Custom Converter</h1>
     <form method="POST">
-        <label>Value:</label>
-        <input type="number" name="value" step="any" required><br>
+        <label>Variable A name:</label>
+        <input name="a_name" required><br><br>
 
-        <label>Operator:</label>
-        <select name="operator">
-            {% for op in operators %}
-                <option value="{{ op }}">{{ op }}</option>
-            {% endfor %}
-        </select><br>
-
-        <label>Number:</label>
-        <input type="number" name="number" step="any" required><br>
+        <label>Variable B name:</label>
+        <input name="b_name" required><br><br>
 
         <label>Direction:</label>
-        <select name="direction">
-            <option value="a_to_b">A → B</option>
-            <option value="b_to_a">B → A</option>
-        </select><br>
+        <select name="direction" required>
+            <option value="A_to_B">A to B</option>
+            <option value="B_to_A">B to A</option>
+        </select><br><br>
+
+        <label>Operation:</label>
+        <select name="operator" required>
+            <option value="plus">+</option>
+            <option value="minus">−</option>
+            <option value="times">×</option>
+            <option value="divided">÷</option>
+            <option value="raised">^</option>
+        </select><br><br>
+
+        <label>Factor:</label>
+        <input name="factor" type="number" step="any" required><br><br>
+
+        <label>Value to convert:</label>
+        <input name="value" type="number" step="any" required><br><br>
 
         <button type="submit">Convert</button>
     </form>
 
     {% if result %}
-        <p><strong>Result:</strong> {{ result }}</p>
+        <h2>{{ result }}</h2>
     {% endif %}
 
     <p><a href="/">Go back</a></p>
