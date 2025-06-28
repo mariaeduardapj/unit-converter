@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Converter</title>
+</head>
+<body>
+    <h1>Custom Converter</h1>
+    <form method="POST">
+        <label>Value:</label>
+        <input type="number" name="value" step="any" required><br>
+
+        <label>Operator:</label>
+        <select name="operator">
+            {% for op in operators %}
+                <option value="{{ op }}">{{ op }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>Number:</label>
+        <input type="number" name="number" step="any" required><br>
+
+        <label>Direction:</label>
+        <select name="direction">
+            <option value="a_to_b">A → B</option>
+            <option value="b_to_a">B → A</option>
+        </select><br>
+
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+        <p><strong>Result:</strong> {{ result }}</p>
+    {% endif %}
+
+    <p><a href="/">Go back</a></p>
+</body>
+</html>

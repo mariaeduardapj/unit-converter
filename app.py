@@ -10,7 +10,8 @@ from converter_logic.energy import convert_energy, energies
 from converter_logic.digital_storage import convert_digital_storage, ds_units
 from converter_logic.number_bases import convert_number_base, bases
 from converter_logic.time_duration import (time_units, convert_time_unit, calculate_days_between, get_currency_time_in_zone, timezones)
-from converter_logic.currency import currency_converter, currencies
+from converter_logic.currency import convert_currency, currencies
+from converter_logic.custom import convert_custom, operations
 
 app = Flask(__name__)
 
@@ -200,11 +201,31 @@ def currency_converter_page():
             from_currency = request.form['from_unit']
             to_currency = request.form['to_unit']
             value = float(request.form['value'])
-            converted = currency_converter(from_currency,to_currency,value)
+            converted = convert_currency(from_currency,to_currency,value)
             result = f"{value} {from_currency} = {format(converted, '.2f')} {to_currency}"
         except Exception as e:
             result = f"Erro: {e}"
     return render_template('currency.html', result=result, currencies=currencies)
+
+@app.route('/custom', methods=['GET', 'POST'])
+def custom_converter():
+    result = None
+    variables = ["Variable_A","Variable_B"]
+    operators = ["plus","minus","times","divided","raised"]
+
+    if request.method == 'POST':
+        try:
+            value = float(request.form['value'])
+            operator = request.form['operator']
+            number = float(request.form['number'])
+            direction = request.form['direction']
+
+            converted = convert_custom(value,operator,number)
+            result = f"{value} {variables[0 if direction == 'a_to_b' else 1]} {converted} {variables[1 if direction == 'a_to_b' else 0]}"
+        except Exception as e:
+            result = f"Error {e}"
+
+    return render_template("custom.html", result=result, operators=operators)
 
 if __name__ == '__main__':
     app.run(debug=True)
