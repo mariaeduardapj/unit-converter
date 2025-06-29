@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time and Duration Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Time and Duration Converter</h1>
@@ -16,7 +17,6 @@
             <option value="{{ unit }}">{{ unit }}</option>
         {% endfor %}
     </select>
-    →
     <select name="to_unit">
         {% for unit in time_units %}
             <option value="{{ unit }}">{{ unit }}</option>
