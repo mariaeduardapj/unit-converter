@@ -21,6 +21,7 @@ A Python project that allows you to convert between various types of units.
 
 - Python 3.10 or higher
 - Flask
+- tzdata
 
 Install dependencies with:
 
@@ -62,6 +63,8 @@ unit_converter/
 │ └── time_duration.html
 │ └── currency.html
 │ └── custom.html
+├── static/
+│ ├── style.css
 ├── .gitignore           
 └── README.md             
 
