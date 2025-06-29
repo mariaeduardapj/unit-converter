@@ -4,22 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Unit Converter</h1>
-    <ul>
-        <li><a href="/area">Area Converter</a></li>
-        <li><a href="/length">Length Converter</a></li>
-        <li><a href="/volume">Volume Converter</a></li>
-        <li><a href="/weight">Weight Converter</a></li>
-        <li><a href="/pressure">Pressure Converter</a></li>
-        <li><a href="/frequency">Frequency Converter</a></li>
-        <li><a href="/temperature">Temperature Converter</a></li>
-        <li><a href="/energy">Energy Converter</a></li>
-        <li><a href="/digital_storage">Digital Storage Converter</a></li>
-        <li><a href="/time_duration">Time Duration Converter</a></li>
-        <li><a href="/currency">Currency Converter</a></li>
-        <li><a href="/custom">Custom Converter</a></li>
-    </ul>
+    <div class="card-container">
+        <div class="card">
+            <h2><a href="/area">Area</a></h2>
+            <p>Converts area units (km², hm², dam², m², dm², cm², mm²)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/length">Length</a></h2>
+            <p>Converts length units (km, hm, dam, m, dm, cm, mm)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/volume">Volume</a></h2>
+            <p>Converts volume units (km³, hm³, dam³, m³, dm³, cm³, mm³, kL, hL, daL, L, dL, cL, mL)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/weight">Weight</a></h2>
+            <p>Converts weight units (ton, kg, hg, dag, g, dg, cg, mg)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/pressure">Pressure</a></h2>
+            <p>Converts pressure units (Pa, kPa, MPa, bar, atm, mmHg, psi)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/frequency">Frequency</a></h2>
+            <p>Converts frequency units (Hz, kHz, MHz, GHz, THz, cps, rpm, bpm, fps)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/temperature">Temperature</a></h2>
+            <p>Converts temperature units (Celsius, Fahrenheit, Kelvin)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/energy">Energy</a></h2>
+            <p>Converts energy units (W, kW, J, kJ, cal, kcal, eV, BTU)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/digital_storage">Digital Storage</a></h2>
+            <p>Converts digital storage units (bytes, kb, mb, gb, tb, pb, eb, zb)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/time_duration">Time Duration</a></h2>
+            <p>- Time units (Year, Month, Day, Hour, Minute, Second)<br>- Day county (How many days between dates)<br>- Time zones (Real time in São Paulo, New York, Los Angeles, London, Paris, Tokyo, Dubai, Cairo, Sydney)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/currency">Time Duration</a></h2>
+            <p>Converts exchange rates in real time (Dollar, Euro, Pound Sterling, Yen, Real, Yuan)</p>
+        </div>
+        <div class="card">
+            <h2><a href="/custom">Custom</a></h2>
+            <p>Conversion between two custom variables (allows choice of name, operator, factor and value)</p>
+        </div>
+    </div>
 </body>
 </html>
